@@ -1,0 +1,19 @@
+<%= form_with(model: @nurutter, local: true, url: choose_new_or_edit) do |form| %>
+  <% if nurutter.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @nurutter.errors.count %>件のエラーがあります！</h2>
+      <% nurutter.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.text_area :content, id: :nurutter_content, :maxlength=>"140" %>
+  </div>
+
+  <div class="actions">
+   <button type='submit' name='action' value='send' class="btn btn-primary">ぬるっとする</button>
+  </div>
+<% end %>

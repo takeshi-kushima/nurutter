@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>本文:</strong>
+  
+  <%= @nurutter.content %>
+</p>
+<br>
+<button type="button" class="btn btn-success"><%= link_to '編集する', edit_nurutter_path(@nurutter) %></button>
+<button type="button" class="btn btn-warning"><%= link_to '戻る', nurutters_path %></button>

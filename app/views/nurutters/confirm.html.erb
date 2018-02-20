@@ -1,0 +1,16 @@
+<h3>以下の内容で、ぬるっとしてみる？。</h3>
+
+<%= form_with(model: @nurutter, url: nurutters_path, local: true) do |form| %>
+  <%= form.hidden_field :content %>
+  <p>本文:<%= @nurutter.content %></p>
+  
+  <button type='submit' name='action' value='send' class="btn btn-primary">ぬるっとする</button>
+  <% end %>
+  
+  <br>
+  <%= form_with(model: @nurutter, url: new_nurutter_path, local: true, method: 'get') do |form| %>
+    <%= form.hidden_field :title %>
+    <%= form.hidden_field :content %>
+    <%= form.submit "もどる" , :class=> "btn btn-warning" ,name: 'back' %></button>
+  <% end %>
+ 
